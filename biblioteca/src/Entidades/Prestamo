@@ -1,0 +1,29 @@
+export class Prestamo {
+  id: number;
+  estudianteId: number;
+  libros: { id: number; cantidad: number }[];
+  fechaPrestamo: Date;
+  fechaEntrega: Date;
+  estado: string;
+
+  constructor(
+    id: number,
+    estudianteId: number,
+    libros: { id: number; cantidad: number }[],
+    fechaPrestamo: string,
+    fechaEntrega: string,
+    estado: string
+  ) {
+    this.id = id;
+    this.estudianteId = estudianteId;
+    this.libros = libros;
+    this.fechaPrestamo = new Date(fechaPrestamo);
+    this.fechaEntrega = new Date(fechaEntrega);
+    this.estado = estado;
+  }
+
+  estaRetrasado(): boolean {
+    const hoy = new Date();
+    return hoy > this.fechaEntrega && this.estado !== "Devuelto";
+  }
+}

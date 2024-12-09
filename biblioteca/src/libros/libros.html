@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gestión de Libros</title>
+  <link rel="stylesheet" href="/src/css/global.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="/src/libros/libros.html" class="active">Libros</a></li>
+        <li><a href="/src/estudiantes/estudiantes.html">Estudiantes</a></li>
+        <li><a href="/index.html">Préstamos</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <h1>Gestión de Libros</h1>
+    <button id="boton-agregar">Agregar Libro</button>
+    <div class="filtros">
+      <input type="text" id="filtro-general" placeholder="Buscar por código, nombre, autor o editorial">
+      <select id="filtro-categoria">
+        <option value="">Todas las categorías</option>
+        <option value="Literatura">Literatura</option>
+        <option value="Salud">Salud</option>
+        <option value="Informatica">Informática</option>
+        <option value="Erotico">Erótico</option>
+        <!-- Agrega más categorías según sea necesario -->
+      </select>
+      <select id="filtro-tipo">
+        <option value="">Todos</option>
+        <option value="Libro">Libro</option>
+        <option value="Revista">Revista</option>
+      </select>
+      <select id="filtro-stock">
+        <option value="">Todos</option>
+        <option value="true">Con stock</option>
+        <option value="false">Sin stock</option>
+      </select>
+      <button id="boton-restablecer">Restablecer</button>
+    </div>
+    <table id="tabla-libros">
+      <thead>
+        <tr>
+          <th>Código</th>
+          <th>Nombre</th>
+          <th>Autor</th>
+          <th>Editorial</th>
+          <th>Categoría</th>
+          <th>Año Publicacion</th>
+          <th>Tipo</th>
+          <th>Stock</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </main>
+  <script src="libros.ts" type="module"></script>
+</body>
+</html>
+
+  
+  
+  
